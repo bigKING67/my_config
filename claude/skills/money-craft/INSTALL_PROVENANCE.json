@@ -1,0 +1,10 @@
+{
+  "schema": "money-craft.install-provenance.v1",
+  "installed_at": "2026-09-29T08:18:36.720973Z",
+  "version": "0.3.0",
+  "source_repository": "https://github.com/bigKING67/money-craft",
+  "source_commit": "bd85d017df6eea1cd852f419ed47c32ba17059a2",
+  "source_dirty": false,
+  "source_skill_sha256": "13bb4a39f62c064953c1da355fc82e739ade05d08dbf8722ab4b9484c20b4db8",
+  "installer": "scripts/install_skill.py"
+}

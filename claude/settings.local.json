@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch",
+      "Bash(pip3 install:*)",
+      "Bash(python3:*)",
+      "Bash(claude mcp remove:*)",
+      "Bash(claude mcp add:*)",
+      "Bash(claude mcp list:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(openspec --version:*)",
+      "Bash(kaku init:*)",
+      "Bash(curl:*)"
+    ],
+    "deny": [],
+    "defaultMode": "auto"
+  }
+}

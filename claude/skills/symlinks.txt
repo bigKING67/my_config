@@ -1,0 +1,13 @@
+agentation -> ../../.agents/skills/agentation
+browser67 -> ../../.agents/skills/browser67
+design-craft -> ../../.agents/skills/design-craft
+herdr -> ../../.agents/skills/herdr
+js-reverse -> ../../.agents/skills/js-reverse
+lark-calendar -> ../../.agents/skills/lark-calendar
+lark-doc -> ../../.agents/skills/lark-doc
+lark-im -> ../../.agents/skills/lark-im
+lark-shared -> ../../.agents/skills/lark-shared
+lark-task -> ../../.agents/skills/lark-task
+review-craft -> ../../.agents/skills/review-craft
+whoami -> /Users/gaoqian/Documents/sixseven/codeproject/craft67/packages/whoami
+write-craft -> ../../.agents/skills/write-craft

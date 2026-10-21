@@ -1,0 +1,54 @@
+{
+  "mcpServers": {
+    "groland-db": {
+      "type": "stdio",
+      "command": "/Users/gaoqian/.grok/bin/mcp-groland-db.sh",
+      "args": []
+    },
+    "deepwiki": {
+      "type": "http",
+      "url": "https://mcp.deepwiki.com/mcp",
+      "disabled": true
+    },
+    "pdf_reader": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "@sylphx/pdf-reader-mcp"
+      ],
+      "disabled": true
+    },
+    "agent-memory": {
+      "type": "stdio",
+      "command": "/Users/gaoqian/.local/bin/agent-memory-mcp",
+      "args": [],
+      "disabled": true
+    },
+    "tmwd_browser": {
+      "type": "stdio",
+      "command": "/Users/gaoqian/.nvm/versions/node/v24.18.0/bin/node",
+      "args": [
+        "/Users/gaoqian/Documents/sixseven/codeproject/craft67/packages/browser67/src/mcp/browser/server.mjs"
+      ],
+      "env": {
+        "BROWSER_STRUCTURED_TMWD_LINK_ENDPOINT": "http://127.0.0.1:18766/link",
+        "BROWSER_STRUCTURED_TMWD_MODE": "tmwd",
+        "BROWSER_STRUCTURED_TMWD_TRANSPORT": "auto",
+        "BROWSER_STRUCTURED_TMWD_WS_ENDPOINT": "ws://127.0.0.1:18765"
+      }
+    },
+    "js-reverse": {
+      "type": "stdio",
+      "command": "/Users/gaoqian/.nvm/versions/node/v24.18.0/bin/node",
+      "args": [
+        "/Users/gaoqian/Documents/sixseven/codeproject/craft67/packages/browser67/src/mcp/js-reverse/server.mjs"
+      ],
+      "env": {
+        "BROWSER_STRUCTURED_TMWD_LINK_ENDPOINT": "http://127.0.0.1:18766/link",
+        "BROWSER_STRUCTURED_TMWD_MODE": "tmwd",
+        "BROWSER_STRUCTURED_TMWD_TRANSPORT": "auto",
+        "BROWSER_STRUCTURED_TMWD_WS_ENDPOINT": "ws://127.0.0.1:18765"
+      }
+    }
+  }
+}

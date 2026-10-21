@@ -1,0 +1,191 @@
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "https://4router.net",
+    "ANTHROPIC_AUTH_TOKEN": "<YOUR_TOKEN_HERE>",
+    "BASH_DEFAULT_TIMEOUT_MS": "600000",
+    "BASH_MAX_TIMEOUT_MS": "3600000",
+    "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "95",
+    "CLAUDE_CODE_ATTRIBUTION_HEADER": "0",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+    "CLAUDE_CODE_PROXY_RESOLVES_HOSTS": "1",
+    "HTTP_PROXY": "http://127.0.0.1:7890",
+    "HTTPS_PROXY": "http://127.0.0.1:7890",
+    "NO_PROXY": "127.0.0.1,localhost"
+  },
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "permissions": {
+    "allow": [
+      "Bash(ls :*)",
+      "Bash(cargo check:*)",
+      "Bash(cargo clippy:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(tree:*)",
+      "Bash(jq:*)",
+      "Bash(/Users/gaoqian/.local/bin/datahub-vps-ssh:*)",
+      "Bash(/Users/gaoqian/.local/bin/aios-vps-ssh:*)",
+      "Bash(/tmp/vps.sh:*)"
+    ],
+    "deny": [],
+    "defaultMode": "auto"
+  },
+  "model": "opus",
+  "hooks": {
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "OTTY_CLI='/Applications/Otty.app/Contents/MacOS/otty-cli' '/Applications/Otty.app/Contents/Resources/agent-integration/claude/otty-hook.sh' awaiting \"$PPID\" ctx"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "OTTY_CLI='/Applications/Otty.app/Contents/MacOS/otty-cli' OTTY_SOCKET='/Users/gaoqian/Library/Application Support/io.appmakes.otty/otty.sock' '/Applications/Otty.app/Contents/Resources/agent-integration/grok/otty-hook.sh' processing"
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "OTTY_CLI='/Applications/Otty.app/Contents/MacOS/otty-cli' '/Applications/Otty.app/Contents/Resources/agent-integration/claude/otty-hook.sh' processing \"$PPID\""
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "OTTY_CLI='/Applications/Otty.app/Contents/MacOS/otty-cli' OTTY_SOCKET='/Users/gaoqian/Library/Application Support/io.appmakes.otty/otty.sock' '/Applications/Otty.app/Contents/Resources/agent-integration/grok/otty-hook.sh' processing"
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "OTTY_CLI='/Applications/Otty.app/Contents/MacOS/otty-cli' '/Applications/Otty.app/Contents/Resources/agent-integration/claude/otty-hook.sh' processing \"$PPID\""
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "OTTY_CLI='/Applications/Otty.app/Contents/MacOS/otty-cli' OTTY_SOCKET='/Users/gaoqian/Library/Application Support/io.appmakes.otty/otty.sock' '/Applications/Otty.app/Contents/Resources/agent-integration/grok/otty-hook.sh' idle"
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "OTTY_CLI='/Applications/Otty.app/Contents/MacOS/otty-cli' '/Applications/Otty.app/Contents/Resources/agent-integration/claude/otty-hook.sh' idle \"$PPID\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "OTTY_CLI='/Applications/Otty.app/Contents/MacOS/otty-cli' OTTY_SOCKET='/Users/gaoqian/Library/Application Support/io.appmakes.otty/otty.sock' '/Applications/Otty.app/Contents/Resources/agent-integration/grok/otty-hook.sh' idle"
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "OTTY_CLI='/Applications/Otty.app/Contents/MacOS/otty-cli' '/Applications/Otty.app/Contents/Resources/agent-integration/claude/otty-hook.sh' idle \"$PPID\""
+          }
+        ]
+      }
+    ],
+    "StopFailure": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "OTTY_CLI='/Applications/Otty.app/Contents/MacOS/otty-cli' '/Applications/Otty.app/Contents/Resources/agent-integration/claude/otty-hook.sh' error \"$PPID\""
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/design-craft-guard.sh",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "OTTY_CLI='/Applications/Otty.app/Contents/MacOS/otty-cli' OTTY_SOCKET='/Users/gaoqian/Library/Application Support/io.appmakes.otty/otty.sock' '/Applications/Otty.app/Contents/Resources/agent-integration/grok/otty-hook.sh' processing"
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "OTTY_CLI='/Applications/Otty.app/Contents/MacOS/otty-cli' '/Applications/Otty.app/Contents/Resources/agent-integration/claude/otty-hook.sh' processing \"$PPID\""
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh",
+    "padding": 0
+  },
+  "enabledPlugins": {
+    "chrome-devtools-mcp@chrome-devtools-plugins": false,
+    "frontend-design@claude-code-plugins": false,
+    "skill-creator@claude-plugins-official": false,
+    "skill-creator@daymade-skills": false,
+    "ui-designer@daymade-skills": false,
+    "warp@claude-code-warp": false,
+    "rust-analyzer-lsp@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "chrome-devtools-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "ChromeDevTools/chrome-devtools-mcp"
+      }
+    }
+  },
+  "language": "Chinese",
+  "spinnerTipsEnabled": false,
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "high"
+    }
+  },
+  "tui": "fullscreen",
+  "skipDangerousModePermissionPrompt": true,
+  "skipWorkflowUsageWarning": true,
+  "showTurnDuration": false,
+  "disableDeepLinkRegistration": "disable"
+}
